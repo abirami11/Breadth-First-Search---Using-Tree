@@ -35,6 +35,18 @@ class TreeNode:
 			thisLevel = next
 			
 
+	def bfs_usingQueue(self):
+		q = Queue.Queue()
+		q.put(self)
+
+		while not q.empty():
+			node = q.get()
+			print node.keyValue
+			if node.leftChild:
+				q.put(node.leftChild)
+			if node.rightChild:
+				q.put(node.rightChild)
+				
 node = TreeNode(10)
 node.binary_insert(8)
 node.binary_insert(13)
